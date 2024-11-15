@@ -1,0 +1,12 @@
+// ESTE ES UN PROXY QUE UTILIZÓ LUIS PARA PODER HACER PETICIONES A LA API DE JAVA
+// Y NO TENER PROBLEMAS DE CORS EN EL FRONTEND DE ANGULAR.
+
+//{
+//  "/api": {
+//    "target": "http://localhost:8080",
+//    "secure": false,
+//    "changeOrigin": true,
+//    "pathRewrite": { "^/api": "" },
+//    "logLevel": "debug"
+//  }
+//}
