@@ -7,7 +7,6 @@
   flex-direction: column;
 }
 
-
 .header {
   display: flex;
   justify-content: space-between;
@@ -28,6 +27,11 @@
 .nav a {
   text-decoration: none;
   color: white;
+  font-weight: bold;
+}
+
+.nav a.routerLinkActive {
+  text-decoration: underline;
   font-weight: bold;
 }
 
@@ -74,3 +78,4 @@
 .footer .social-links a:hover {
   color: #4caf50;
 }
+
