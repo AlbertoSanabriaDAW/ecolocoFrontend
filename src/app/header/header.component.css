@@ -1,0 +1,18 @@
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #588100;
+  padding: 10px;
+}
+
+.logo {
+  height: 50px; /* Ajusta según el tamaño deseado */
+  margin-right: 15px;
+}
+
+.title {
+  color: #F39F18;
+  font-size: 24px; /* Ajusta el tamaño del texto según sea necesario */
+  font-family: Arial, sans-serif; /* Cambia la fuente según prefieras */
+}
