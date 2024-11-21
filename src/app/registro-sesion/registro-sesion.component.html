@@ -1,0 +1,59 @@
+<ion-content>
+  <div class="form-container">
+    <h2 class="form-title">Registro de Usuario</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <!-- Usuario -->
+      <div class="form-field">
+        <ion-label class="input-label">Usuario</ion-label>
+        <ion-input formControlName="username" type="text" class="input-field"></ion-input>
+        <ion-note
+          *ngIf="registerForm.get('username')?.invalid && registerForm.get('username')?.touched"
+          color="danger"
+        >
+          El usuario es obligatorio.
+        </ion-note>
+      </div>
+
+      <!-- Email -->
+      <div class="form-field">
+        <ion-label class="input-label">E-mail</ion-label>
+        <ion-input formControlName="email" type="email" class="input-field"></ion-input>
+        <ion-note
+          *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched"
+          color="danger"
+        >
+          Introduce un e-mail válido.
+        </ion-note>
+      </div>
+
+      <!-- Contraseña -->
+      <div class="form-field">
+        <ion-label class="input-label">Contraseña</ion-label>
+        <ion-input formControlName="password" type="password" class="input-field"></ion-input>
+        <ion-note
+          *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched"
+          color="danger"
+        >
+          La contraseña debe tener al menos 6 caracteres.
+        </ion-note>
+      </div>
+
+      <!-- Repetir Contraseña -->
+      <div class="form-field">
+        <ion-label class="input-label">Repetir Contraseña</ion-label>
+        <ion-input formControlName="confirmPassword" type="password" class="input-field"></ion-input>
+        <ion-note
+          *ngIf="registerForm.hasError('passwordMismatch') && registerForm.get('confirmPassword')?.touched"
+          color="danger"
+        >
+          Las contraseñas no coinciden.
+        </ion-note>
+      </div>
+
+      <!-- Botón de Registro -->
+      <ion-button expand="block" type="submit" [disabled]="registerForm.invalid" class="submit-button">
+        Registrarse
+      </ion-button>
+    </form>
+  </div>
+</ion-content>
