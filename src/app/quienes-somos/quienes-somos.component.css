@@ -1,0 +1,14 @@
+section {
+  text-align: center;
+  margin: 20px;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #10dc60; /* Verde ambiental */
+}
+
+p {
+  font-size: 1.2rem;
+  color: #222;
+}
