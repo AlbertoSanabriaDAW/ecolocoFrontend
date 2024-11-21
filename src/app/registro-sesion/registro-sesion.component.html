@@ -5,7 +5,7 @@
       <!-- Usuario -->
       <div class="form-field">
         <ion-label class="input-label">Usuario</ion-label>
-        <ion-input formControlName="username" type="text" class="input-field"></ion-input>
+        <ion-input formControlName="username" type="text"></ion-input>
         <ion-note
           *ngIf="registerForm.get('username')?.invalid && registerForm.get('username')?.touched"
           color="danger"
@@ -17,7 +17,7 @@
       <!-- Email -->
       <div class="form-field">
         <ion-label class="input-label">E-mail</ion-label>
-        <ion-input formControlName="email" type="email" class="input-field"></ion-input>
+        <ion-input formControlName="email" type="email"></ion-input>
         <ion-note
           *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched"
           color="danger"
@@ -29,7 +29,7 @@
       <!-- Contraseña -->
       <div class="form-field">
         <ion-label class="input-label">Contraseña</ion-label>
-        <ion-input formControlName="password" type="password" class="input-field"></ion-input>
+        <ion-input formControlName="password" type="password"></ion-input>
         <ion-note
           *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched"
           color="danger"
@@ -41,7 +41,7 @@
       <!-- Repetir Contraseña -->
       <div class="form-field">
         <ion-label class="input-label">Repetir Contraseña</ion-label>
-        <ion-input formControlName="confirmPassword" type="password" class="input-field"></ion-input>
+        <ion-input formControlName="confirmPassword" type="password"></ion-input>
         <ion-note
           *ngIf="registerForm.hasError('passwordMismatch') && registerForm.get('confirmPassword')?.touched"
           color="danger"

@@ -1,25 +1,25 @@
 /* Fondo general */
 ion-content {
-  --background: #f3f7f3; /* Fondo claro */
+  --background: #f3f7f3; /* Color de fondo */
   display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh; /* Altura completa */
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  min-height: 100vh; /* Altura mínima para llenar la pantalla */
   padding: 16px;
-  font-family: 'Arial', sans-serif;
 }
 
-/* Contenedor del formulario */
+/* Ajustar posición del formulario */
 .form-container {
-  background: #dff0d8; /* Verde claro */
+  background: #dff0d8; /* Fondo verde claro */
   border-radius: 12px; /* Bordes redondeados */
   border: 2px solid #2a7f2a; /* Borde verde oscuro */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra */
-  padding: 30px; /* Espaciado interno */
+  padding: 30px;
   width: 100%;
-  max-width: 400px;
-  position: relative;
+  max-width: 400px; /* Tamaño máximo del formulario */
   text-align: center;
+  position: relative;
+  margin-top: 50px; /* Mover hacia abajo */
 }
 
 /* Decoración superior */
@@ -52,50 +52,45 @@ ion-content {
   margin-bottom: 15px;
 }
 
-.input-label {
-  display: block;
+ion-label {
   font-size: 16px;
   color: #2a7f2a; /* Verde oscuro */
-  margin-bottom: 5px;
 }
 
-.input-field {
+ion-input {
   display: block;
   width: 100%;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  font-size: 16px;
   padding: 10px;
-  font-size: 14px;
   color: #333;
+  border: 1px solid transparent;
 }
 
-/* Mensajes de error */
-ion-note {
-  font-size: 12px;
-  color: #d9534f; /* Rojo */
-  margin-top: 4px;
+ion-input:focus {
+  border: 1px solid #2a7f2a; /* Borde verde cuando el campo está en foco */
+  background: #ffffff; /* Fondo blanco */
+  outline: none;
 }
 
 /* Botón */
 .submit-button {
-  background: linear-gradient(90deg, #34a853, #81c784); /* Degradado verde más claro */
-  color: white; /* Texto blanco */
+  background: linear-gradient(90deg, #56ab2f, #a8e063); /* Degradado verde */
+  color: white;
   font-weight: bold;
   margin-top: 20px;
   font-size: 16px;
   border-radius: 8px;
   padding: 10px 0;
-  text-transform: uppercase;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .submit-button:hover {
   transform: scale(1.05); /* Ampliar ligeramente al pasar el cursor */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .submit-button:active {
   transform: scale(0.95); /* Reducir tamaño al hacer clic */
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15); /* Sombra más suave */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
 }

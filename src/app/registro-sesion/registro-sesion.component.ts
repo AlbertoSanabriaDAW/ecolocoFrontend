@@ -1,47 +1,49 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
-import {IonicModule} from '@ionic/angular';
-import {NgIf} from '@angular/common';
+import {IonButton, IonContent, IonInput, IonLabel, IonNote} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-registro-sesion',
   templateUrl: './registro-sesion.component.html',
   standalone: true,
   imports: [
-    IonicModule,
+    IonNote,
+    IonInput,
+    IonLabel,
     ReactiveFormsModule,
-    NgIf
+    IonContent,
+    IonButton
   ],
   styleUrls: ['./registro-sesion.component.scss']
 })
 export class RegistroSesionComponent {
-  registerForm: FormGroup;
+  registerForm: FormGroup; // Definición de registerForm
 
   constructor(private fb: FormBuilder) {
-    this.registerForm = this.fb.group(
-      {
-        username: ['', Validators.required],
+    // Inicialización del formulario
+    this.registerForm = this.fb.group({
+        username: ['', [Validators.required, Validators.minLength(3)]],
         email: ['', [Validators.required, Validators.email]],
         password: ['', [Validators.required, Validators.minLength(6)]],
         confirmPassword: ['', Validators.required],
       },
       {
-        validators: this.passwordMatchValidator,
-      }
-    );
+        validators: this.passwordMatchValidator, // Validador personalizado para las contraseñas
+      });
   }
 
-  // Validador para verificar si las contraseñas coinciden
+  // Validador personalizado para verificar que las contraseñas coincidan
   passwordMatchValidator(form: FormGroup) {
-    return form.get('password')?.value === form.get('confirmPassword')?.value
-      ? null
-      : { passwordMismatch: true };
+    const password = form.get('password')?.value;
+    const confirmPassword = form.get('confirmPassword')?.value;
+    return password === confirmPassword ? null : { passwordMismatch: true };
   }
 
+  // Método para manejar el envío del formulario
   onSubmit() {
     if (this.registerForm.valid) {
       console.log('Formulario válido:', this.registerForm.value);
-      // Procesa los datos del formulario aquí
+      alert('¡Registro exitoso!');
     } else {
       console.log('Formulario inválido');
     }
