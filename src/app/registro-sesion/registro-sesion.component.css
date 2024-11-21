@@ -1,14 +1,15 @@
 /* Fondo general */
 ion-content {
-  --background: #f3f7f3; /* Color de fondo */
-  display: flex;
-  justify-content: center; /* Centrar horizontalmente */
-  align-items: center; /* Centrar verticalmente */
-  min-height: 100vh; /* Altura mínima para llenar la pantalla */
-  padding: 16px;
+  --background: #f3f7f3; /* Fondo claro */
+  display: block; /* Evitamos flexbox aquí */
+  position: relative; /* Para manejar el contenedor */
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Incluye padding y border en el tamaño */
 }
 
-/* Ajustar posición del formulario */
+/* Contenedor del formulario */
 .form-container {
   background: #dff0d8; /* Fondo verde claro */
   border-radius: 12px; /* Bordes redondeados */
@@ -17,9 +18,11 @@ ion-content {
   padding: 30px;
   width: 100%;
   max-width: 400px; /* Tamaño máximo del formulario */
-  text-align: center;
-  position: relative;
-  margin-top: 50px; /* Mover hacia abajo */
+  text-align: center; /* Centrar texto */
+  position: fixed; /* Fijamos la posición del formulario */
+  top: 50%; /* Centrado vertical */
+  left: 50%; /* Centrado horizontal */
+  transform: translate(-50%, -50%); /* Ajustamos para centrar realmente */
 }
 
 /* Decoración superior */
@@ -41,7 +44,7 @@ ion-content {
 /* Título */
 .form-title {
   text-align: center;
-  color: #2a7f2a; /* Verde oscuro */
+  color: #2a7f2a;
   font-size: 22px;
   font-weight: bold;
   margin-bottom: 20px;
@@ -54,7 +57,7 @@ ion-content {
 
 ion-label {
   font-size: 16px;
-  color: #2a7f2a; /* Verde oscuro */
+  color: #2a7f2a;
 }
 
 ion-input {
@@ -67,8 +70,8 @@ ion-input {
 }
 
 ion-input:focus {
-  border: 1px solid #2a7f2a; /* Borde verde cuando el campo está en foco */
-  background: #ffffff; /* Fondo blanco */
+  border: 1px solid #2a7f2a;
+  background: #ffffff;
   outline: none;
 }
 
@@ -86,11 +89,11 @@ ion-input:focus {
 }
 
 .submit-button:hover {
-  transform: scale(1.05); /* Ampliar ligeramente al pasar el cursor */
+  transform: scale(1.05);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .submit-button:active {
-  transform: scale(0.95); /* Reducir tamaño al hacer clic */
+  transform: scale(0.95);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
 }
