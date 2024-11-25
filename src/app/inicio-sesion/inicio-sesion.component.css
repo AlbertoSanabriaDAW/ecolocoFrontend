@@ -1,0 +1,98 @@
+/* Fondo general */
+ion-content {
+  --background: #f3f7f3;
+  display: block;
+  position: relative;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Contenedor del formulario */
+.form-container {
+  background: #dff0d8;
+  border-radius: 12px;
+  border: 2px solid #2a7f2a;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Título */
+.form-title {
+  text-align: center;
+  color: #2a7f2a;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Campos del formulario */
+.form-field {
+  margin-bottom: 15px;
+}
+
+ion-label {
+  font-size: 16px;
+  color: #2a7f2a;
+}
+
+ion-input {
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  padding: 10px;
+  color: #333;
+  border: 1px solid transparent;
+}
+
+ion-input:focus {
+  border: 1px solid #2a7f2a;
+  background: #ffffff;
+  outline: none;
+}
+
+/* Botón de inicio */
+.submit-button {
+  background: linear-gradient(90deg, #56ab2f, #a8e063);
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 18px;
+  border-radius: 8px;
+  padding: 12px 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+/* Hover */
+.submit-button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #45a049, #7ed957);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Active */
+.submit-button:active {
+  transform: scale(0.95);
+  background: linear-gradient(90deg, #2e7031, #6bb945);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Deshabilitado */
+.submit-button:disabled {
+  background: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+  box-shadow: none;
+}
