@@ -1,28 +1,28 @@
 /* Fondo general */
 ion-content {
   --background: #f3f7f3; /* Fondo claro */
-  display: block; /* Evitamos flexbox aquí */
-  position: relative; /* Para manejar el contenedor */
-  height: 100vh; /* Ocupa toda la altura de la pantalla */
+  display: block;
+  position: relative;
+  height: 100vh;
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Incluye padding y border en el tamaño */
+  box-sizing: border-box;
 }
 
 /* Contenedor del formulario */
 .form-container {
   background: #dff0d8; /* Fondo verde claro */
-  border-radius: 12px; /* Bordes redondeados */
+  border-radius: 12px;
   border: 2px solid #2a7f2a; /* Borde verde oscuro */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra */
   padding: 30px;
   width: 100%;
-  max-width: 400px; /* Tamaño máximo del formulario */
-  text-align: center; /* Centrar texto */
-  position: relative; /* Fijamos la posición del formulario */
-  top: 50%; /* Centrado vertical */
-  left: 50%; /* Centrado horizontal */
-  transform: translate(-50%, -50%); /* Ajustamos para centrar realmente */
+  max-width: 400px; /* Tamaño máximo */
+  text-align: center;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* Decoración superior */
@@ -75,25 +75,40 @@ ion-input:focus {
   outline: none;
 }
 
-/* Botón */
+/* Botón de registro */
 .submit-button {
-  background: linear-gradient(90deg, #56ab2f, #a8e063); /* Degradado verde */
-  color: white;
+  background: linear-gradient(90deg, #56ab2f, #a8e063); /* Degradado */
+  color: white; /* Texto blanco */
   font-weight: bold;
-  margin-top: 20px;
-  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 18px;
   border-radius: 8px;
-  padding: 10px 0;
+  padding: 12px 20px;
+  margin-top: 20px;
+  cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
+/* Hover */
 .submit-button:hover {
   transform: scale(1.05);
+  background: linear-gradient(90deg, #45a049, #7ed957);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* Active */
 .submit-button:active {
   transform: scale(0.95);
+  background: linear-gradient(90deg, #2e7031, #6bb945);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Deshabilitado */
+.submit-button:disabled {
+  background: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+  box-shadow: none;
 }
