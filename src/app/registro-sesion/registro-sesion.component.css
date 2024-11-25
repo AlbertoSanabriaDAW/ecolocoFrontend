@@ -19,7 +19,7 @@ ion-content {
   width: 100%;
   max-width: 400px; /* Tamaño máximo del formulario */
   text-align: center; /* Centrar texto */
-  position: fixed; /* Fijamos la posición del formulario */
+  position: relative; /* Fijamos la posición del formulario */
   top: 50%; /* Centrado vertical */
   left: 50%; /* Centrado horizontal */
   transform: translate(-50%, -50%); /* Ajustamos para centrar realmente */
