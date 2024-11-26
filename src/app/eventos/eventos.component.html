@@ -1,25 +1,33 @@
+<ion-header>
+  <h1 class="eventos-titulo">🌿 Participa en Nuestros Eventos 🌿</h1>
+</ion-header>
 
-  <ion-grid>
-    <ion-row>
-      <ion-col size="12" size-md="6" *ngFor="let evento of eventos">
-        <ion-card>
-          <ion-img [src]="evento.foto"></ion-img>
-          <ion-card-header>
-            <ion-card-title>{{ evento.titulo }}</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <p>{{ evento.descripcion }}</p>
-            <p><strong>Ubicación:</strong> {{ evento.ubicacion }}</p>
-            <p><strong>Aptitudes buscadas:</strong></p>
-            <ul>
-              <li *ngFor="let aptitud of evento.aptitudes">{{ aptitud }}</li>
-            </ul>
-          </ion-card-content>
-          <ion-button expand="block" color="primary" (click)="apuntarse(evento)">
+<ion-grid>
+  <ion-row>
+    <ion-col size="12" size-md="6" *ngFor="let evento of eventos; let i = index">
+      <ion-card>
+        <!-- Selección de imagen basada en el índice -->
+        <ion-img
+          [src]="'assets/images/eventos' + (i + 1) + '.jpg'"
+          class="evento-imagen"
+        ></ion-img>
+        <ion-card-header>
+          <ion-card-title>{{ evento.titulo }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p class="evento-descripcion">{{ evento.descripcion }}</p>
+          <p><strong>📍 Ubicación:</strong> {{ evento.ubicacion }}</p>
+          <p><strong>🎯 Aptitudes buscadas:</strong></p>
+          <ul>
+            <li *ngFor="let aptitud of evento.aptitudes">{{ aptitud }}</li>
+          </ul>
+        </ion-card-content>
+        <div class="boton-wrapper">
+          <button class="boton-apuntarse" (click)="apuntarse(evento)">
             Apuntarse
-          </ion-button>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-
+          </button>
+        </div>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>

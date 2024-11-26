@@ -6,7 +6,7 @@ import {
   IonCardHeader,
   IonCardTitle,
   IonCol, IonContent,
-  IonGrid,
+  IonGrid, IonHeader,
   IonImg,
   IonRow
 } from '@ionic/angular/standalone';
@@ -27,7 +27,8 @@ import {NgForOf} from '@angular/common';
     IonGrid,
     IonContent,
     IonButton,
-    NgForOf
+    NgForOf,
+    IonHeader
   ],
   styleUrls: ['./eventos.component.scss']
 })

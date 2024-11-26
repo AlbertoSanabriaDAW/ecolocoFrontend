@@ -1,39 +1,82 @@
+/* Fondo externo para toda la página */
+body, ion-app, ion-content {
+  background-color: #dfffd6; /* Verde pistacho claro */
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  min-height: 100vh; /* Asegura que cubra toda la ventana */
+}
+
+/* Encabezado principal */
+h1.eventos-titulo {
+  text-align: center;
+  font-size: 2.8em;
+  margin: 20px 0;
+  color: #27ae60;
+  font-family: 'Arial', sans-serif;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border-bottom: 2px solid #27ae60;
+  display: inline-block;
+  background-color: #f1f9f3;
+  border-radius: 8px;
+}
+
+/* Estilo de las tarjetas */
 ion-card {
   margin: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  overflow: hidden;
-  transition: transform 0.2s ease-in-out;
-
-  &:hover {
-    transform: translateY(-5px);
-  }
+  border: none;
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra */
+  overflow: hidden; /* Evita que el contenido salga del contenedor */
+  background-color: #f4fdf4; /* Fondo verde claro para las tarjetas */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-ion-img {
+ion-card:hover {
+  transform: translateY(-8px); /* Animación al pasar el mouse */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen dentro de la tarjeta */
+.evento-imagen {
   width: 100%;
-  height: auto;
-  object-fit: cover;
+  height: 200px; /* Tamaño uniforme para todas las imágenes */
+  object-fit: cover; /* Ajusta la imagen sin deformarla */
+  object-position: center; /* Centra la imagen dentro de su contenedor */
+  border-bottom: 2px solid #27ae60;
 }
 
+/* Estilo del encabezado */
 ion-card-header {
   text-align: center;
-  background-color: #f4f4f4;
-  border-bottom: 1px solid #ddd;
+  background-color: #eafaf1;
+  padding: 10px 15px;
+  font-family: 'Verdana', sans-serif;
+  color: #2c3e50;
+  border-bottom: 1px solid #27ae60; /* Línea separadora */
 }
 
 ion-card-title {
-  font-size: 1.5em;
+  font-size: 1.8em;
   font-weight: bold;
-  color: #333;
+  margin: 0;
+  color: #34495e;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
+/* Contenido de las tarjetas */
 ion-card-content {
   font-size: 1em;
-  color: #555;
+  color: #2c3e50;
+  padding: 20px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
 
   p {
-    margin: 5px 0;
+    margin: 10px 0;
+    display: flex; /* Alinea etiquetas y contenido */
+    align-items: center; /* Centra verticalmente etiqueta y contenido */
   }
 
   ul {
@@ -41,12 +84,47 @@ ion-card-content {
     padding-left: 20px;
 
     li {
-      margin: 3px 0;
+      margin: 5px 0;
     }
   }
 }
 
-ion-button {
-  margin: 10px;
+/* Asegurar que las etiquetas tengan el mismo ancho */
+p strong {
+  display: inline-block;
+  width: 150px;
   font-weight: bold;
+  color: #34495e;
+  text-align: left;
+  margin-right: 10px;
+}
+
+/* Botón */
+.boton-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #27ae60;
+  border-radius: 0 0 15px 15px;
+  padding: 0;
+}
+
+.boton-apuntarse {
+  all: unset;
+  display: block;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  border-radius: 0 0 15px 15px;
+}
+
+.boton-apuntarse:hover {
+  background-color: #219150;
+  transform: scale(1.02);
 }
