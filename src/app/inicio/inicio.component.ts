@@ -1,23 +1,22 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { IonicModule } from '@ionic/angular';
-
+import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import {IonButton} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.component.html',
-  styleUrls: ['./inicio.component.scss'],
+  styleUrls: ['./inicio.component.css'],
   standalone: true,
-  imports: [IonicModule],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  imports: [RouterModule, IonButton],
 })
 export class InicioComponent {
-  onRegisterClick() {
-    console.log('¡Botón de registro presionado!');
-    // Aquí puedes agregar lógica de navegación o mostrar un modal de registro.
+  constructor(private router: RouterModule) {}
+
+  onRegisterClick(): void {
+    location.href = '/registro';
   }
 
-  onLoginClick() {
-    console.log('¡Botón de inicio de sesión presionado!');
-    // Aquí puedes agregar lógica de navegación o mostrar un modal de login.
+  onLoginClick(): void {
+    location.href = '/inicioSesion';
   }
 }

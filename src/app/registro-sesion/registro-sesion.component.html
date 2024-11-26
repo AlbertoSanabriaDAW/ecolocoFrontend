@@ -6,48 +6,24 @@
       <div class="form-field">
         <ion-label class="input-label">Usuario</ion-label>
         <ion-input formControlName="username" type="text"></ion-input>
-        <ion-note
-          *ngIf="registerForm.get('username')?.invalid && registerForm.get('username')?.touched"
-          color="danger"
-        >
-          El usuario es obligatorio.
-        </ion-note>
       </div>
 
       <!-- Campo Email -->
       <div class="form-field">
         <ion-label class="input-label">E-mail</ion-label>
         <ion-input formControlName="email" type="email"></ion-input>
-        <ion-note
-          *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched"
-          color="danger"
-        >
-          Introduce un e-mail válido.
-        </ion-note>
       </div>
 
       <!-- Campo Contraseña -->
       <div class="form-field">
         <ion-label class="input-label">Contraseña</ion-label>
         <ion-input formControlName="password" type="password"></ion-input>
-        <ion-note
-          *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched"
-          color="danger"
-        >
-          La contraseña debe tener al menos 6 caracteres.
-        </ion-note>
       </div>
 
       <!-- Campo Repetir Contraseña -->
       <div class="form-field">
         <ion-label class="input-label">Repetir Contraseña</ion-label>
         <ion-input formControlName="confirmPassword" type="password"></ion-input>
-        <ion-note
-          *ngIf="registerForm.hasError('passwordMismatch') && registerForm.get('confirmPassword')?.touched"
-          color="danger"
-        >
-          Las contraseñas no coinciden.
-        </ion-note>
       </div>
 
       <!-- Botón de Registro -->

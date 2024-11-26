@@ -1,32 +1,20 @@
 <ion-content>
   <div class="form-container">
-    <h2 class="form-title">Inicio loco en Ecoloco</h2>
+    <h2 class="form-title">Inicia Sesión</h2>
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <!-- Campo Usuario -->
       <div class="form-field">
         <ion-label class="input-label">Usuario</ion-label>
         <ion-input formControlName="username" type="text"></ion-input>
-        <ion-note
-          *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched"
-          color="danger"
-        >
-          El usuario es obligatorio.
-        </ion-note>
       </div>
 
       <!-- Campo Contraseña -->
       <div class="form-field">
         <ion-label class="input-label">Contraseña</ion-label>
         <ion-input formControlName="password" type="password"></ion-input>
-        <ion-note
-          *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
-          color="danger"
-        >
-          La contraseña es obligatoria.
-        </ion-note>
       </div>
 
-      <!-- Botón de Entrar -->
+      <!-- Botón de Inicio -->
       <ion-button expand="block" type="submit" [disabled]="loginForm.invalid" class="submit-button">
         Entrar
       </ion-button>

@@ -1,31 +1,28 @@
 import { Component } from '@angular/core';
-import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 @Component({
   selector: 'app-inicio-sesion',
   templateUrl: './inicio-sesion.component.html',
-  styleUrls: ['./inicio-sesion.component.scss'],
+  styleUrls: ['./inicio-sesion.component.css'],
   standalone: true,
-  imports: [CommonModule, IonicModule, ReactiveFormsModule],
+  imports: [ReactiveFormsModule, RouterModule, IonicModule],
 })
 export class InicioSesionComponent {
   loginForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
     this.loginForm = this.fb.group({
-      username: ['', [Validators.required, Validators.minLength(3)]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
+      username: ['', Validators.required],
+      password: ['', Validators.required],
     });
   }
 
-  onSubmit() {
+  onSubmit(): void {
     if (this.loginForm.valid) {
-      console.log('Datos del formulario:', this.loginForm.value);
-      alert('¡Inicio de sesión exitoso!');
-    } else {
-      alert('Por favor, completa todos los campos correctamente.');
+      console.log('Inicio de sesión exitoso:', this.loginForm.value);
     }
   }
 }
