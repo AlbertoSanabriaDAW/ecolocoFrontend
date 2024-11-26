@@ -1,1 +1,106 @@
-<p>contacto works!</p>
+<div class="contact-container">
+  <h1 class="contact-title">Contáctanos</h1>
+  <p class="contact-description">
+    En Ecoloco nos encanta conectar con personas apasionadas por el medio ambiente.
+    Si tienes preguntas, sugerencias o deseas unirte a nuestros eventos, ¡no dudes en escribirnos!
+  </p>
+
+  <div class="contact-details">
+    <h2>Información de contacto</h2>
+    <p><strong>Dirección:</strong> Parque del Alamillo, Sevilla, España</p>
+    <p><strong>Email:</strong> contacto&#64;ecoloco.com</p>
+    <p><strong>Teléfono:</strong> +34 123 456 789</p>
+  </div>
+
+  <div class="contact-map">
+    <h2>Encuéntranos aquí</h2>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3174.438507894469!2d-5.994523284685812!3d37.405588679827826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd126c379cf6ef3f%3A0x9387f4f50cf8cdb9!2sParque%20del%20Alamillo!5e0!3m2!1ses!2ses!4v1697812345678!5m2!1ses!2ses"
+      width="600"
+      height="450"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+
+  <div class="contact-form">
+    <h2>Envíanos un mensaje</h2>
+    <form>
+      <label for="name">Nombre:</label>
+      <input type="text" id="name" name="name" placeholder="Tu nombre..." required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Tu email..." required>
+
+      <label for="message">Mensaje:</label>
+      <textarea id="message" name="message" placeholder="Tu mensaje..." rows="5" required></textarea>
+
+      <button type="submit" class="btn-submit">Enviar</button>
+    </form>
+  </div>
+</div>
+
+<style>
+  .contact-container {
+    font-family: 'Arial', sans-serif;
+    color: #2c3e50;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .contact-title {
+    text-align: center;
+    font-size: 2em;
+    color: #27ae60;
+  }
+
+  .contact-description {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .contact-details {
+    margin: 20px 0;
+  }
+
+  .contact-map {
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  .contact-form {
+    margin-top: 20px;
+  }
+
+  .contact-form label {
+    display: block;
+    margin-top: 10px;
+  }
+
+  .contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .btn-submit {
+    background-color: #27ae60;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+
+  .btn-submit:hover {
+    background-color: #219150;
+  }
+</style>
