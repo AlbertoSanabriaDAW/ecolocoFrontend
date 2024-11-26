@@ -9,5 +9,6 @@ export const routes: Routes = [
   { path: 'quienes-somos', component: QuienesSomosComponent }, // Página "Quiénes somos"
   { path: 'registro', component: RegistroSesionComponent }, // Página de registro
   { path: 'inicioSesion', component: InicioSesionComponent }, // Página de registro
+  { path: 'inicio', component: InicioComponent}, // Página Inicio
 
 ];

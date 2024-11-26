@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {IonButton, IonContent, IonInput, IonLabel, IonNote} from '@ionic/angular/standalone';
+import {NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-registro-sesion',
@@ -12,7 +13,8 @@ import {IonButton, IonContent, IonInput, IonLabel, IonNote} from '@ionic/angular
     IonLabel,
     ReactiveFormsModule,
     IonContent,
-    IonButton
+    IonButton,
+    NgIf,
   ],
   styleUrls: ['./registro-sesion.component.scss']
 })
