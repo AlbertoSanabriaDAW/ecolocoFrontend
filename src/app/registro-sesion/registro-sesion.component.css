@@ -77,6 +77,10 @@ ion-input:focus {
 
 /* Botón de registro */
 .submit-button {
+  all: unset; /* Elimina todos los estilos predeterminados */
+  display: block;
+  margin: 20px auto 0 auto; /* Centra horizontalmente el botón */
+  text-align: center;
   background: linear-gradient(90deg, #56ab2f, #a8e063); /* Degradado */
   color: white; /* Texto blanco */
   font-weight: bold;
@@ -85,7 +89,6 @@ ion-input:focus {
   font-size: 18px;
   border-radius: 8px;
   padding: 12px 20px;
-  margin-top: 20px;
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
