@@ -1,12 +1,7 @@
-<ion-header>
-  <h1 class="eventos-titulo">🌿 Participa en Nuestros Eventos 🌿</h1>
-</ion-header>
-
 <ion-grid>
   <ion-row>
     <ion-col size="12" size-md="6" *ngFor="let evento of eventos; let i = index">
       <ion-card>
-        <!-- Selección de imagen basada en el índice -->
         <ion-img
           [src]="'assets/images/eventos' + (i + 1) + '.jpg'"
           class="evento-imagen"

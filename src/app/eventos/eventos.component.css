@@ -89,14 +89,15 @@ ion-card-content {
   }
 }
 
-/* Asegurar que las etiquetas tengan el mismo ancho */
+/* Evitar que las etiquetas se dividan en varias líneas */
 p strong {
   display: inline-block;
-  width: 150px;
+  width: auto; /* Ajusta el ancho automáticamente */
   font-weight: bold;
   color: #34495e;
   text-align: left;
   margin-right: 10px;
+  white-space: nowrap; /* Mantiene el texto en una sola línea */
 }
 
 /* Botón */

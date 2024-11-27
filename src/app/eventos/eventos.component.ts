@@ -46,7 +46,7 @@ export class EventosComponent {
       titulo: 'Plantar vegetación autóctona',
       descripcion: 'Colabora en la reforestación de áreas naturales.',
       ubicacion: 'Parque Nacional de Doñana, Huelva',
-      aptitudes: ['Conocimientos básicos de jardinería']
+      aptitudes: ['Conocimientos básicos de jardinería', 'Vegano']
     },
     {
       foto: 'assets/img/rescate-ciudadano.jpg',
