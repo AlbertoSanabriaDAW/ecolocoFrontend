@@ -9,6 +9,7 @@ import {InicioSesionComponent} from './inicio-sesion/inicio-sesion.component';
 import { EventosComponent} from './eventos/eventos.component';
 import {GestionComponent} from './gestion/gestion.component';
 import {PerfilComponent} from './perfil/perfil.component';
+import {CreacionEventoComponent} from './creacion-evento/creacion-evento.component';
 
 @Component({
   selector: 'app-root',
@@ -23,7 +24,8 @@ import {PerfilComponent} from './perfil/perfil.component';
     InicioSesionComponent,
     EventosComponent,
     GestionComponent,
-    PerfilComponent
+    PerfilComponent,
+    CreacionEventoComponent,
   ], // Incluye todos los componentes standalone
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],

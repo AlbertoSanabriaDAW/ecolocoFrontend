@@ -6,6 +6,8 @@ import {InicioSesionComponent} from './inicio-sesion/inicio-sesion.component';
 import {EventosComponent} from './eventos/eventos.component';
 import {ContactoComponent} from './contacto/contacto.component';
 import {GestionComponent} from './gestion/gestion.component';
+import {CreacionEventoComponent} from './creacion-evento/creacion-evento.component';
+import {PerfilComponent} from './perfil/perfil.component';
 
 export const routes: Routes = [
   { path: '', component: InicioComponent }, // Página principal
@@ -16,5 +18,7 @@ export const routes: Routes = [
   { path: 'eventos', component: EventosComponent}, //Página Eventos
   { path: 'contacto', component: ContactoComponent},
   { path: 'gestion', component: GestionComponent},
+  { path: 'creacionEvento', component: CreacionEventoComponent},
+  { path: 'perfil', component: PerfilComponent},
 
 ];
