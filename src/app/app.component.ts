@@ -10,6 +10,9 @@ import { EventosComponent} from './eventos/eventos.component';
 import {GestionComponent} from './gestion/gestion.component';
 import {PerfilComponent} from './perfil/perfil.component';
 import {CreacionEventoComponent} from './creacion-evento/creacion-evento.component';
+import { HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
+
 
 @Component({
   selector: 'app-root',
@@ -32,5 +35,19 @@ import {CreacionEventoComponent} from './creacion-evento/creacion-evento.compone
 })
 export class AppComponent {
   title = 'ecolocoFrontend';
+  posts: any[] = [];
+
+  constructor(private http: HttpClient) {}
+
+  ngOnInit(): void {
+    //Hacemos la solicitud http a la API
+    this.getData().subscribe((data: any) => {
+      this.posts = data;
+    });
+  }
+
+  getData(): Observable<any>{
+    return this.http.get('/api/eventos');
+  }
 }
 
