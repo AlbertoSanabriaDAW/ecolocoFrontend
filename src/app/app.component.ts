@@ -7,6 +7,8 @@ import { QuienesSomosComponent } from './quienes-somos/quienes-somos.component';
 import { RegistroSesionComponent } from './registro-sesion/registro-sesion.component';
 import {InicioSesionComponent} from './inicio-sesion/inicio-sesion.component';
 import { EventosComponent} from './eventos/eventos.component';
+import {GestionComponent} from './gestion/gestion.component';
+import {PerfilComponent} from './perfil/perfil.component';
 
 @Component({
   selector: 'app-root',
@@ -20,6 +22,8 @@ import { EventosComponent} from './eventos/eventos.component';
     RegistroSesionComponent,
     InicioSesionComponent,
     EventosComponent,
+    GestionComponent,
+    PerfilComponent
   ], // Incluye todos los componentes standalone
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
