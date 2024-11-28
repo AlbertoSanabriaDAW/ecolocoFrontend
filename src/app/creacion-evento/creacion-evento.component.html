@@ -1,0 +1,65 @@
+<ion-content>
+  <div class="form-container">
+    <h2 class="form-title">Nuevo Evento</h2>
+    <form [formGroup]="eventoForm" (ngSubmit)="onSubmit()">
+      <!-- Campo Foto -->
+      <div class="form-field">
+        <ion-label class="input-label">Foto (URL)</ion-label>
+        <ion-input
+          formControlName="foto"
+          type="url"
+          placeholder="Ejemplo: https://imagen.com/evento.jpg"
+        ></ion-input>
+      </div>
+
+      <!-- Campo Título -->
+      <div class="form-field">
+        <ion-label class="input-label">Título del Evento</ion-label>
+        <ion-input formControlName="titulo" type="text" required></ion-input>
+      </div>
+
+      <!-- Campo Descripción -->
+      <div class="form-field">
+        <ion-label class="input-label">Descripción</ion-label>
+        <ion-textarea
+          formControlName="descripcion"
+          required
+        ></ion-textarea>
+      </div>
+
+      <!-- Campo Fecha -->
+      <div class="form-field">
+        <ion-label class="input-label">Fecha</ion-label>
+        <ion-datetime
+          formControlName="fecha"
+          presentation="date"
+        ></ion-datetime>
+      </div>
+
+      <!-- Campo Ubicación -->
+      <div class="form-field">
+        <ion-label class="input-label">Ubicación</ion-label>
+        <ion-input formControlName="ubicacion" type="text" required></ion-input>
+      </div>
+
+      <!-- Campo Aptitudes Buscadas -->
+      <div class="form-field">
+        <ion-label class="input-label">Aptitudes Buscadas</ion-label>
+        <ion-input
+          formControlName="aptitudes"
+          type="text"
+          placeholder="Todos los públicos"
+        ></ion-input>
+      </div>
+
+      <!-- Botón de Guardar -->
+      <button
+        type="submit"
+        [disabled]="eventoForm.invalid"
+        class="submit-button"
+      >
+        Guardar Evento
+      </button>
+    </form>
+  </div>
+</ion-content>

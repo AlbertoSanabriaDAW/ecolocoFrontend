@@ -1,0 +1,35 @@
+<ion-content>
+  <div class="form-container">
+    <h2 class="form-title">Registro de Usuario</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <!-- Campo Usuario -->
+      <div class="form-field">
+        <ion-label class="input-label">Usuario</ion-label>
+        <ion-input formControlName="username" type="text"></ion-input>
+      </div>
+
+      <!-- Campo Email -->
+      <div class="form-field">
+        <ion-label class="input-label">E-mail</ion-label>
+        <ion-input formControlName="email" type="email"></ion-input>
+      </div>
+
+      <!-- Campo Contraseña -->
+      <div class="form-field">
+        <ion-label class="input-label">Contraseña</ion-label>
+        <ion-input formControlName="password" type="password"></ion-input>
+      </div>
+
+      <!-- Campo Repetir Contraseña -->
+      <div class="form-field">
+        <ion-label class="input-label">Repetir Contraseña</ion-label>
+        <ion-input formControlName="confirmPassword" type="password"></ion-input>
+      </div>
+
+      <!-- Botón de Registro -->
+      <button type="submit" [disabled]="registerForm.invalid" class="submit-button">
+        Registrarse
+      </button>
+    </form>
+  </div>
+</ion-content>
