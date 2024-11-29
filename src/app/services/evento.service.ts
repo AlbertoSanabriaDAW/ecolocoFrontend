@@ -19,7 +19,7 @@ export class EventoService {
 
   constructor(private http: HttpClient) { }
 
-  obtenerEventos(): Observable<any> {
-    return this.http.get(`${this.apiURL}/lista`); // Obtener eventos
+  obtenerEventos(): Observable<Evento[]> {
+    return this.http.get<Evento[]>(`${this.apiURL}/lista`); // Obtener eventos
   }
 }

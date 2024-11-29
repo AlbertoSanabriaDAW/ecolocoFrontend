@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { QuienesSomosComponent } from './quienes-somos/quienes-somos.component';
+import { ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,10 @@ import { QuienesSomosComponent } from './quienes-somos/quienes-somos.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
+    AppComponent,
+    InicioComponent,
+    QuienesSomosComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],
