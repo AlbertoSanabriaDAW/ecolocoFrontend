@@ -22,4 +22,6 @@ export class EventoService {
   obtenerEventos(): Observable<Evento[]> {
     return this.http.get<Evento[]>(`${this.apiURL}/lista`); // Obtener eventos
   }
+
+  //guardarEventos():
 }
