@@ -35,19 +35,5 @@ import {Observable} from 'rxjs';
 })
 export class AppComponent {
   title = 'ecolocoFrontend';
-  posts: any[] = [];
-
-  constructor(private http: HttpClient) {}
-
-  ngOnInit(): void {
-    //Hacemos la solicitud http a la API
-    this.getData().subscribe((data: any) => {
-      this.posts = data;
-    });
-  }
-
-  getData(): Observable<any>{
-    return this.http.get('/api/eventos');
-  }
 }
 
