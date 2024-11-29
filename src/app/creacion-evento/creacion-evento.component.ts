@@ -1,44 +1,35 @@
 import { Component } from '@angular/core';
-import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
-import {IonContent, IonDatetime, IonInput, IonLabel, IonTextarea} from "@ionic/angular/standalone";
+import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-creacion-evento',
   templateUrl: './creacion-evento.component.html',
   styleUrls: ['./creacion-evento.component.css'],
   imports: [
-    FormsModule,
-    IonInput,
-    IonLabel,
-    ReactiveFormsModule,
-    IonContent,
-    IonTextarea,
-    IonDatetime
+    ReactiveFormsModule
   ],
   standalone: true
 })
 export class CreacionEventoComponent {
-  eventoForm: FormGroup; // Declarar el formulario
+  eventoForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
-    // Inicializar el formulario con controles y validaciones
     this.eventoForm = this.fb.group({
-      foto: [''], // Campo no obligatorio
-      titulo: ['', Validators.required], // Campo obligatorio
-      descripcion: ['', Validators.required], // Campo obligatorio
-      fecha: ['', Validators.required], // Campo obligatorio
-      ubicacion: ['', Validators.required], // Campo obligatorio
-      aptitudes: ['Todos los públicos'], // Campo no obligatorio con valor por defecto
+      titulo: ['', Validators.required], // Único campo obligatorio
+      foto: [''], // Opcional
+      descripcion: [''], // Opcional
+      fecha: [''], // Opcional
+      ubicacion: [''], // Opcional
+      aptitudes: [''], // Opcional
     });
   }
 
-  // Método que se ejecuta al enviar el formulario
   onSubmit() {
     if (this.eventoForm.valid) {
-      console.log('Evento creado:', this.eventoForm.value);
-      // Lógica adicional para manejar la creación del evento
+      console.log('Evento Guardado:', this.eventoForm.value);
+      alert('Evento guardado exitosamente');
     } else {
-      console.error('Formulario inválido');
+      alert('Por favor completa el título del evento.');
     }
   }
 }

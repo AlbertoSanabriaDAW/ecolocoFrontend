@@ -1,65 +1,81 @@
-<ion-content>
-  <div class="form-container">
-    <h2 class="form-title">Nuevo Evento</h2>
-    <form [formGroup]="eventoForm" (ngSubmit)="onSubmit()">
-      <!-- Campo Foto -->
-      <div class="form-field">
-        <ion-label class="input-label">Foto (URL)</ion-label>
-        <ion-input
-          formControlName="foto"
-          type="url"
-          placeholder="Ejemplo: https://imagen.com/evento.jpg"
-        ></ion-input>
-      </div>
+<div class="form-container">
+  <h2 class="form-title">Nuevo Evento</h2>
+  <form [formGroup]="eventoForm" (ngSubmit)="onSubmit()">
+    <!-- Campo Título (Obligatorio) -->
+    <div class="form-field">
+      <label class="input-label" for="titulo">Título del Evento</label>
+      <input
+        id="titulo"
+        formControlName="titulo"
+        type="text"
+        required
+        class="form-input"
+      />
+    </div>
 
-      <!-- Campo Título -->
-      <div class="form-field">
-        <ion-label class="input-label">Título del Evento</ion-label>
-        <ion-input formControlName="titulo" type="text" required></ion-input>
-      </div>
+    <!-- Campo Foto (Opcional) -->
+    <div class="form-field">
+      <label class="input-label" for="foto">Foto (URL)</label>
+      <input
+        id="foto"
+        formControlName="foto"
+        type="url"
+        placeholder="Ejemplo: https://imagen.com/evento.jpg"
+        class="form-input"
+      />
+    </div>
 
-      <!-- Campo Descripción -->
-      <div class="form-field">
-        <ion-label class="input-label">Descripción</ion-label>
-        <ion-textarea
-          formControlName="descripcion"
-          required
-        ></ion-textarea>
-      </div>
+    <!-- Campo Descripción (Opcional) -->
+    <div class="form-field">
+      <label class="input-label" for="descripcion">Descripción</label>
+      <textarea
+        id="descripcion"
+        formControlName="descripcion"
+        class="form-input"
+      ></textarea>
+    </div>
 
-      <!-- Campo Fecha -->
-      <div class="form-field">
-        <ion-label class="input-label">Fecha</ion-label>
-        <ion-datetime
-          formControlName="fecha"
-          presentation="date"
-        ></ion-datetime>
-      </div>
+    <!-- Campo Fecha (Opcional) -->
+    <div class="form-field">
+      <label class="input-label" for="fecha">Fecha</label>
+      <input
+        id="fecha"
+        formControlName="fecha"
+        type="date"
+        class="form-input"
+      />
+    </div>
 
-      <!-- Campo Ubicación -->
-      <div class="form-field">
-        <ion-label class="input-label">Ubicación</ion-label>
-        <ion-input formControlName="ubicacion" type="text" required></ion-input>
-      </div>
+    <!-- Campo Ubicación (Opcional) -->
+    <div class="form-field">
+      <label class="input-label" for="ubicacion">Ubicación</label>
+      <input
+        id="ubicacion"
+        formControlName="ubicacion"
+        type="text"
+        class="form-input"
+      />
+    </div>
 
-      <!-- Campo Aptitudes Buscadas -->
-      <div class="form-field">
-        <ion-label class="input-label">Aptitudes Buscadas</ion-label>
-        <ion-input
-          formControlName="aptitudes"
-          type="text"
-          placeholder="Todos los públicos"
-        ></ion-input>
-      </div>
+    <!-- Campo Aptitudes Buscadas (Opcional) -->
+    <div class="form-field">
+      <label class="input-label" for="aptitudes">Aptitudes Buscadas</label>
+      <input
+        id="aptitudes"
+        formControlName="aptitudes"
+        type="text"
+        placeholder="Todos los públicos"
+        class="form-input"
+      />
+    </div>
 
-      <!-- Botón de Guardar -->
-      <button
-        type="submit"
-        [disabled]="eventoForm.invalid"
-        class="submit-button"
-      >
-        Guardar Evento
-      </button>
-    </form>
-  </div>
-</ion-content>
+    <!-- Botón de Guardar -->
+    <button
+      type="submit"
+      [disabled]="eventoForm.get('titulo')?.invalid"
+      class="submit-button"
+    >
+      Guardar Evento
+    </button>
+  </form>
+</div>
