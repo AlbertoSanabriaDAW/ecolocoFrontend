@@ -1,0 +1,48 @@
+.profile-card {
+  background-color: #e0f7e9; /* Verde claro */
+  border: 2px solid #4caf50; /* Verde más oscuro */
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 300px;
+  margin: 20px auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+  color: #2e7d32; /* Texto en verde */
+}
+
+.profile-card h2, .profile-card h3 {
+  color: #1b5e20; /* Verde oscuro */
+  margin-bottom: 10px;
+}
+
+.profile-card p, .profile-card ul {
+  margin: 0 0 10px;
+}
+
+.profile-card ul {
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+.profile-card li {
+  margin: 5px 0;
+}
+
+.edit-button {
+  background-color: #4caf50; /* Verde para el botón */
+  color: #fff; /* Texto blanco */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.edit-button:hover {
+  background-color: #388e3c; /* Verde más oscuro al pasar el mouse */
+}
+
+.edit-button:focus {
+  outline: none;
+  box-shadow: 0 0 4px #66bb6a; /* Sombra cuando está enfocado */
+}
