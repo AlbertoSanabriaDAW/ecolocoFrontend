@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-perfil',
-  standalone: true,
-  imports: [],
   templateUrl: './perfil.component.html',
-  styleUrl: './perfil.component.css'
+  styleUrls: ['./perfil.component.css'],
+  standalone: true,
+  imports: [RouterModule],
 })
 export class PerfilComponent {
-
+  onEditClick(): void {
+    location.href = '/perfilEditar'; // Redirección utilizando location.href
+  }
 }

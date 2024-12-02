@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
+import {EventoService} from "../services/evento.service";
 
 @Component({
   selector: 'app-creacion-evento',
@@ -11,21 +12,21 @@ import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/
   standalone: true
 })
 export class CreacionEventoComponent {
-  eventoForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
-    this.eventoForm = this.fb.group({
-      titulo: ['', Validators.required], // Único campo obligatorio
-      foto: [''], // Opcional
-      descripcion: [''], // Opcional
-      fecha: [''], // Opcional
-      ubicacion: [''], // Opcional
-      aptitudes: [''], // Opcional
-    });
-  }
+  eventoForm: FormGroup = new FormGroup({
+    titulo: new FormControl('', Validators.required),
+    imagen: new FormControl(''),
+    descripcion: new FormControl(''),
+    fecha: new FormControl(''),
+    ubicacion: new FormControl(''),
+    aptitudes: new FormControl('')
+  });
+
+  constructor(private eventoService: EventoService) {}
 
   onSubmit() {
-    if (this.eventoForm.valid) {
+    if (this.eventoForm && this.eventoForm.valid) {
+        this.eventoService.guardarEventos(this.eventoForm.value).subscribe();
       console.log('Evento Guardado:', this.eventoForm.value);
       alert('Evento guardado exitosamente');
     } else {

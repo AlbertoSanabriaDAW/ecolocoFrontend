@@ -1,0 +1,29 @@
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.edit-form label {
+  font-weight: bold;
+}
+
+.edit-form input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.edit-form .edit-button {
+  align-self: flex-start;
+  background-color: #4CAF50; /* Ejemplo de estilo reutilizado */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.edit-form .edit-button:hover {
+  background-color: #45a049;
+}

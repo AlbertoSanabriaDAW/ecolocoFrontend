@@ -8,7 +8,7 @@ export interface Evento {
   descripcion: string;
   ubicacion: string;
   aptitudes: string[];
-  foto: string;
+  imagen: string;
 }
 
 @Injectable({
@@ -23,5 +23,7 @@ export class EventoService {
     return this.http.get<Evento[]>(`${this.apiURL}/lista`); // Obtener eventos
   }
 
-  //guardarEventos():
+  guardarEventos(evento: Evento): Observable<Evento>{
+    return this.http.post<Evento>(`${this.apiURL}/crear`, evento ); // Guardar evento
+  }
 }
