@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import {Router, RouterModule} from '@angular/router';
 import { IonicModule } from '@ionic/angular';
+import {LoginService} from '../services/login.service';
 
 @Component({
   selector: 'app-inicio-sesion',
@@ -13,7 +14,7 @@ import { IonicModule } from '@ionic/angular';
 export class InicioSesionComponent {
   loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private loginService: LoginService, private router: Router) {
     this.loginForm = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required],
@@ -22,7 +23,18 @@ export class InicioSesionComponent {
 
   onSubmit(): void {
     if (this.loginForm.valid) {
-      console.log('Inicio de sesión exitoso:', this.loginForm.value);
+      const { username, password } = this.loginForm.value;
+      this.loginService.login(username, password).subscribe({
+        next: (response) => {
+          //Aqui se guarda el token de autenticación
+          localStorage.setItem('authToken', response.token); //Asegurar que el backend devuelva un token
+          this.router.navigate(['/']); // Redirigir al inicio
+        },
+        error: (error) => {
+          console.error('Error al iniciar sesión', error);
+          alert('Usuario o contraseña incorrectos');
+        }
+      });
     }
   }
 }
