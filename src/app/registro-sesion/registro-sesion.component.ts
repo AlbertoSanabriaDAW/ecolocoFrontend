@@ -46,7 +46,7 @@ export class RegistroSesionComponent {
           // Redirigir a la página de inicio de sesión
         },
         error => {
-          console.error('Error al registrar', error);
+          console.error('Mensaje al registrar', error);
           // Mostrar mensaje de error
         }
       );
