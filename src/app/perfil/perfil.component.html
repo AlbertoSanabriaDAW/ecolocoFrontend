@@ -21,3 +21,21 @@
 
   <button class="edit-button" (click)="onEditClick()">Editar</button>
 </div>
+
+<h3>Eventos Apuntados:</h3>
+<table>
+  <thead>
+  <tr>
+    <th>Título del Evento</th>
+    <th>Acciones</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let evento of eventosApuntados">
+    <td>{{ evento }}</td>
+    <td>
+      <button class="desapuntarse-button" (click)="desapuntarse(evento)">Desapuntarse</button>
+    </td>
+  </tr>
+  </tbody>
+</table>

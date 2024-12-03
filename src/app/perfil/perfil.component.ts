@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import { RouterModule } from '@angular/router';
+import {RouterModule} from '@angular/router';
 import {PerfilService} from '../services/perfilService';
 import {NgForOf} from '@angular/common';
+import {EventoService} from '../services/evento.service';
 
 @Component({
   selector: 'app-perfil',
@@ -11,14 +12,16 @@ import {NgForOf} from '@angular/common';
   imports: [RouterModule, NgForOf],
 })
 export class PerfilComponent implements OnInit {
-    nombre: string = '';
-    apellidos: string = '';
-    telefono: string = '';
-    dni: string = '';
-    fechaNacimiento: Date = new Date();
+  nombre: string = '';
+  apellidos: string = '';
+  telefono: string = '';
+  dni: string = '';
+  fechaNacimiento: Date = new Date();
   aptitudes: string[] = [];
+  eventosApuntados: string[] = []; // Ejemplo inicial
 
-  constructor(private perfilService: PerfilService) { }
+  constructor(private perfilService: PerfilService, private eventoService: EventoService) {
+  }
 
   onEditClick(): void {
     location.href = `/perfilEditar/${1}`; // Redirección utilizando location.href
@@ -35,4 +38,10 @@ export class PerfilComponent implements OnInit {
     });
 
   }
+
+  desapuntarse(evento: string): void {
+    this.eventosApuntados = this.eventosApuntados.filter(e => e !== evento);
+    console.log(`Desapuntado del evento: ${evento}`);
+  }
+
 }

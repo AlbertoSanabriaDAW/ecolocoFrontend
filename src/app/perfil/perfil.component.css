@@ -46,3 +46,39 @@
   outline: none;
   box-shadow: 0 0 4px #66bb6a; /* Sombra cuando está enfocado */
 }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 16px;
+  text-align: left;
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+table th {
+  background-color: #4caf50;
+  color: white;
+}
+
+.desapuntarse-button {
+  background-color: #f44336; /* Rojo para desapuntarse */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.desapuntarse-button:hover {
+  background-color: #d32f2f; /* Rojo más oscuro al pasar el mouse */
+}
+
+.desapuntarse-button:focus {
+  outline: none;
+  box-shadow: 0 0 4px #f44336; /* Sombra cuando está enfocado */
+}
