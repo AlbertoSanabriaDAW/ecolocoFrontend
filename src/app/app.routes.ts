@@ -8,6 +8,7 @@ import {ContactoComponent} from './contacto/contacto.component';
 import {GestionComponent} from './gestion/gestion.component';
 import {CreacionEventoComponent} from './creacion-evento/creacion-evento.component';
 import {PerfilComponent} from './perfil/perfil.component';
+import {PerfilEditarComponent} from './perfil-editar/perfil-editar.component';
 
 export const routes: Routes = [
   { path: '', component: InicioComponent }, // Página principal
@@ -20,5 +21,6 @@ export const routes: Routes = [
   { path: 'gestion', component: GestionComponent},
   { path: 'creacionEvento', component: CreacionEventoComponent},
   { path: 'perfil', component: PerfilComponent},
+  { path: 'perfilEditar', component: PerfilEditarComponent},
 
 ];

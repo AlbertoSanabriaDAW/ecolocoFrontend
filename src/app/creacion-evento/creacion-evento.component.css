@@ -1,16 +1,17 @@
 /* Fondo general */
-ion-content {
-  --background: #f3f7f3;
-  display: block;
-  position: relative;
-  height: 100vh;
+body {
+  background: #f3f7f3;
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* Header, contenido, footer */
 }
 
 /* Contenedor del formulario */
 .form-container {
+  position: relative;
   background: #dff0d8;
   border-radius: 12px;
   border: 2px solid #2a7f2a;
@@ -19,10 +20,8 @@ ion-content {
   width: 100%;
   max-width: 400px;
   text-align: center;
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  margin: 20px auto; /* Márgenes arriba y abajo */
 }
 
 /* Título */
@@ -37,38 +36,33 @@ ion-content {
 /* Campos del formulario */
 .form-field {
   margin-bottom: 15px;
+  text-align: left;
 }
 
-ion-label {
-  font-size: 16px;
+.input-label {
+  font-size: 14px;
   color: #2a7f2a;
+  margin-bottom: 5px;
+  display: block;
 }
 
-ion-input,
-ion-textarea,
-ion-datetime {
-  display: block;
+.form-input {
   width: 100%;
   font-size: 16px;
   padding: 10px;
   color: #333;
-  border: 1px solid transparent;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
 }
 
-ion-input:focus,
-ion-textarea:focus,
-ion-datetime:focus {
+.form-input:focus {
   border: 1px solid #2a7f2a;
-  background: #ffffff;
   outline: none;
 }
 
 /* Botón */
 .submit-button {
-  all: unset;
-  display: block;
-  margin: 20px auto 0 auto;
-  text-align: center;
   background: linear-gradient(90deg, #56ab2f, #a8e063);
   color: white;
   font-weight: bold;
@@ -79,6 +73,7 @@ ion-datetime:focus {
   padding: 12px 20px;
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
@@ -86,4 +81,34 @@ ion-datetime:focus {
   transform: scale(1.05);
   background: linear-gradient(90deg, #45a049, #7ed957);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.submit-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* Header y Footer */
+.header {
+  background: #2a7f2a;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.footer {
+  background: #2a7f2a;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1; /* Ocupa el espacio entre el header y el footer */
+  padding: 20px 0; /* Espaciado adicional */
 }

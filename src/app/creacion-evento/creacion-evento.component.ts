@@ -1,44 +1,36 @@
 import { Component } from '@angular/core';
-import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
-import {IonContent, IonDatetime, IonInput, IonLabel, IonTextarea} from "@ionic/angular/standalone";
+import {FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
+import {EventoService} from "../services/evento.service";
 
 @Component({
   selector: 'app-creacion-evento',
   templateUrl: './creacion-evento.component.html',
   styleUrls: ['./creacion-evento.component.css'],
   imports: [
-    FormsModule,
-    IonInput,
-    IonLabel,
-    ReactiveFormsModule,
-    IonContent,
-    IonTextarea,
-    IonDatetime
+    ReactiveFormsModule
   ],
   standalone: true
 })
 export class CreacionEventoComponent {
-  eventoForm: FormGroup; // Declarar el formulario
 
-  constructor(private fb: FormBuilder) {
-    // Inicializar el formulario con controles y validaciones
-    this.eventoForm = this.fb.group({
-      foto: [''], // Campo no obligatorio
-      titulo: ['', Validators.required], // Campo obligatorio
-      descripcion: ['', Validators.required], // Campo obligatorio
-      fecha: ['', Validators.required], // Campo obligatorio
-      ubicacion: ['', Validators.required], // Campo obligatorio
-      aptitudes: ['Todos los públicos'], // Campo no obligatorio con valor por defecto
-    });
-  }
+  eventoForm: FormGroup = new FormGroup({
+    titulo: new FormControl('', Validators.required),
+    imagen: new FormControl(''),
+    descripcion: new FormControl(''),
+    fecha: new FormControl(''),
+    ubicacion: new FormControl(''),
+    aptitudes: new FormControl('')
+  });
 
-  // Método que se ejecuta al enviar el formulario
+  constructor(private eventoService: EventoService) {}
+
   onSubmit() {
-    if (this.eventoForm.valid) {
-      console.log('Evento creado:', this.eventoForm.value);
-      // Lógica adicional para manejar la creación del evento
+    if (this.eventoForm && this.eventoForm.valid) {
+        this.eventoService.guardarEventos(this.eventoForm.value).subscribe();
+      console.log('Evento Guardado:', this.eventoForm.value);
+      alert('Evento guardado exitosamente');
     } else {
-      console.error('Formulario inválido');
+      alert('Por favor completa el título del evento.');
     }
   }
 }
