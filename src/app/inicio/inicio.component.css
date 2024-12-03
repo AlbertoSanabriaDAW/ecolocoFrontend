@@ -39,7 +39,7 @@
   max-width: 200px; /* Tamaño máximo para la imagen */
   height: auto; /* Mantiene la proporción */
   border-radius: 50%; /* Convierte la imagen en un círculo */
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Añade una sombra sutil */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Añade una sombra sutil */
 }
 
 .button-container {
@@ -60,7 +60,7 @@
   background-color: #4caf50; /* Verde ambiental */
   padding: 12px 24px;
   border-radius: 8px; /* Bordes redondeados */
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
