@@ -32,7 +32,7 @@ export class RegistroSesionComponent {
     return password === confirmPassword ? null : { passwordMismatch: true };
   }
 
-  // Método para manejar el envío del formulario
+  // Metodo para manejar el envío del formulario
   onSubmit() {
     if (this.registerForm.valid) {
       console.log('Formulario válido:', this.registerForm.value);
