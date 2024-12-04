@@ -21,6 +21,6 @@ export const routes: Routes = [
   { path: 'gestion', component: GestionComponent},
   { path: 'creacionEvento', component: CreacionEventoComponent},
   { path: 'perfil', component: PerfilComponent},
-  { path: 'perfilEditar', component: PerfilEditarComponent},
+  { path: 'perfilEditar/:id', component: PerfilEditarComponent},
 
 ];

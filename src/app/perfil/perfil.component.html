@@ -1,16 +1,41 @@
 <div class="profile-card">
-  <h2>Nombre de Usuario</h2>
-  <p>ekkoLoco</p>
+  <h2>Nombre:</h2>
+  <p>{{nombre}}</p>
 
-  <h3>Email</h3>
-  <p>4fps&#64;gmail.com</p>
+  <h3>Apellidos:</h3>
+  <p>{{apellidos}}</p>
 
-  <h3>Aptitudes</h3>
+  <h3>Teléfono:</h3>
+  <p>{{telefono}}</p>
+
+  <h3>DNI:</h3>
+  <p>{{dni}}</p>
+
+  <h3>Fecha de Nacimiento:</h3>
+  <p>{{fechaNacimiento}}</p>
+
+  <h3>Aptitudes:</h3>
   <ul>
-    <li>Constructor</li>
-    <li>Trabajo en equipo</li>
-    <li>Conocimientos en Hextech</li>
+    <li *ngFor="let aptitud of aptitudes">{{ aptitud }}</li>
   </ul>
 
   <button class="edit-button" (click)="onEditClick()">Editar</button>
 </div>
+
+<h3>Eventos Apuntados:</h3>
+<table>
+  <thead>
+  <tr>
+    <th>Título del Evento</th>
+    <th>Acciones</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let evento of eventosApuntados">
+    <td>{{ evento }}</td>
+    <td>
+      <button class="desapuntarse-button" (click)="desapuntarse(evento)">Desapuntarse</button>
+    </td>
+  </tr>
+  </tbody>
+</table>

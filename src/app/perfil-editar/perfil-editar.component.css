@@ -1,25 +1,25 @@
 /* Fondo general */
-body {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
+ion-content {
+  --background: #e8f5e9; /* Fondo general */
   display: flex;
   justify-content: center; /* Centra horizontalmente */
   align-items: center; /* Centra verticalmente */
-  background-color: #e8f5e9; /* Fondo general */
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 /* Contenedor del formulario */
 .profile-card {
-  background: #dff0d8;
-  border-radius: 12px;
-  border: 2px solid #2a7f2a;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  background-color: #dff0d8; /* Fondo del formulario */
+  border-radius: 12px; /* Bordes redondeados */
+  border: 2px solid #2a7f2a; /* Borde */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra */
   padding: 30px;
-  width: 100%;
-  max-width: 400px;
-  text-align: center;
+  max-width: 400px; /* Ancho máximo */
+  width: 90%; /* Se adapta a pantallas pequeñas */
+  text-align: center; /* Centrar texto */
   box-sizing: border-box;
 }
 
@@ -64,7 +64,6 @@ h2 {
 
 /* Botón de Guardar */
 .edit-button {
-  all: unset; /* Elimina estilos predeterminados */
   display: block;
   margin: 20px auto 0 auto; /* Centra horizontalmente el botón */
   text-align: center;

@@ -11,7 +11,17 @@ export class PerfilService {
 
   constructor(private http: HttpClient) { }
 
-  editarPerfil(perfil: Perfil, id:string): Observable<any> {
-    return this.http.put(`${this.apiURL}/editar/${id}`, perfil);
+  editarPerfil(perfil: {
+    apellidos: string;
+    fechaNacimiento: Date;
+    telefono: string;
+    nombre: string;
+    dni: string
+  }, id: string): Observable<any> {
+    return this.http.post(`${this.apiURL}/editar/${id}`, perfil);
+  }
+
+  getPerfil(id: string): Observable<Perfil> {
+    return this.http.get<Perfil>(`${this.apiURL}/${id}`);
   }
 }
