@@ -10,6 +10,7 @@ import {IonButton} from '@ionic/angular/standalone';
   imports: [RouterModule, IonButton],
 })
 export class InicioComponent {
+  token: string = localStorage.getItem('authenticationtoken') || '';
   constructor(private router: RouterModule) {}
 
   onRegisterClick(): void {
