@@ -5,7 +5,9 @@
   padding: 20px 10px;
   position: relative;
   bottom: 0;
-  width: 100%;
+  width: 100%; /* Asegura que el footer ocupe el ancho al completo */
+  box-sizing: border-box; /* Incluye el padding dentro del ancho total */
+  margin: 0 auto; /* Centra el footer */
 }
 
 .social-icons {
