@@ -5,6 +5,7 @@ import { IonicModule } from '@ionic/angular';
 import { Registro } from '../modelos/registro';
 import { RegistroService } from '../services/registro.service';
 import {NgIf} from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registro-sesion',
@@ -16,7 +17,7 @@ import {NgIf} from '@angular/common';
 export class RegistroSesionComponent {
   registerForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private registroService: RegistroService) {
+  constructor(private fb: FormBuilder, private registroService: RegistroService, private router: Router) {
     this.registerForm = this.fb.group({
       username: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -43,7 +44,7 @@ export class RegistroSesionComponent {
       this.registroService.registrarUsuario(registro).subscribe(
         response => {
           console.log('Registro exitoso', response);
-          // Redirigir a la página de inicio de sesión
+          this.router.navigate(['/']);
         },
         error => {
           console.error('Mensaje al registrar', error);

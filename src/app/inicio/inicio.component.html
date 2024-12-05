@@ -10,8 +10,10 @@
   <img src="../../assets/images/planetaInicio.png" alt="Planeta ecológico" class="center-image">
 
   <div class="button-container">
-    <button class="register-button" (click)="onRegisterClick()">Regístrate</button>
-    <button class="login-button" (click)="onLoginClick()">Iniciar Sesión</button>
+    <button *ngIf="!token" class="register-button" (click)="onRegisterClick()">Regístrate</button>
+    <button *ngIf="!token" class="login-button" (click)="onLoginClick()">Iniciar Sesión</button>
+
+    <button *ngIf="token" class="logout-button" (click)="onLogoutClick()">Cerrar sesión</button>
   </div>
   <p>{{token}}</p>
 </div>

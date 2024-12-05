@@ -17,10 +17,11 @@ ion-content {
   border: 2px solid #2a7f2a; /* Borde */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra */
   padding: 30px;
-  max-width: 400px; /* Ancho máximo */
+  max-width: 500px; /* Ancho máximo */
   width: 90%; /* Se adapta a pantallas pequeñas */
   text-align: center; /* Centrar texto */
   box-sizing: border-box;
+  margin: 50px auto;
 }
 
 /* Título */

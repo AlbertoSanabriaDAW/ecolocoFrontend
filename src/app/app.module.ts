@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { QuienesSomosComponent } from './quienes-somos/quienes-somos.component';
 import { ReactiveFormsModule} from '@angular/forms';
+import {provideHttpClient, withInterceptors} from '@angular/common/http';
+import {authInterceptor} from './Interceptor/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { ReactiveFormsModule} from '@angular/forms';
     InicioComponent,
     QuienesSomosComponent,
   ],
-  providers: [],
+  providers: [
+    provideHttpClient(withInterceptors([authInterceptor]))
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
