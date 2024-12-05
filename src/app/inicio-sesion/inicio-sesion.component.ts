@@ -27,7 +27,7 @@ export class InicioSesionComponent {
       this.loginService.login(username, password).subscribe({
         next: (response) => {
           //Aqui se guarda el token de autenticación
-          localStorage.setItem('authToken', response.token); //Asegurar que el backend devuelva un token
+          localStorage.setItem('authToken', response.jwtToken); //Asegurar que el backend devuelva un token
           this.router.navigate(['/']); // Redirigir al inicio
         },
         error: (error) => {
