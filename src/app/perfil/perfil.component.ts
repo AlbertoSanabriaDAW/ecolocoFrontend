@@ -6,7 +6,6 @@ import {PerfilService} from '../services/perfilService';
 import {NgForOf} from '@angular/common';
 import {EventoService} from '../services/evento.service';
 import {Evento} from '../modelos/evento';
-import {parse} from 'postcss';
 import {Mensaje} from '../modelos/mensaje';
 
 @Component({
@@ -25,6 +24,8 @@ export class PerfilComponent implements OnInit {
   aptitudes: string[] = [];
   eventosApuntados: Evento[] = []; // Ejemplo inicial
   mensaje: Mensaje = new Mensaje("");
+  id = localStorage.getItem('id') || '';
+  token: string = localStorage.getItem('authToken') || '';
 
   constructor(private perfilService: PerfilService, private eventoService: EventoService) {
   }
@@ -34,7 +35,7 @@ export class PerfilComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.perfilService.getPerfil('1').subscribe((perfil) => {
+    this.perfilService.getPerfil(this.id).subscribe((perfil) => {
       this.nombre = perfil.nombre;
       this.apellidos = perfil.apellidos;
       this.telefono = perfil.telefono;

@@ -40,6 +40,53 @@
         </div>
       </div>
 
+      <!-- Campo Nombre -->
+      <div class="form-field">
+        <ion-label class="input-label">Nombre</ion-label>
+        <ion-input formControlName="nombre" type="text"></ion-input>
+        <div *ngIf="registerForm.get('nombre')?.invalid && (registerForm.get('nombre')?.touched || registerForm.get('nombre')?.dirty)">
+          <small *ngIf="registerForm.get('nombre')?.errors?.['required']">El nombre es requerido.</small>
+        </div>
+      </div>
+
+      <!-- Campo Apellidos -->
+      <div class="form-field">
+        <ion-label class="input-label">Apellidos</ion-label>
+        <ion-input formControlName="apellidos" type="text"></ion-input>
+        <div *ngIf="registerForm.get('apellidos')?.invalid && (registerForm.get('apellidos')?.touched || registerForm.get('apellidos')?.dirty)">
+          <small *ngIf="registerForm.get('apellidos')?.errors?.['required']">Los apellidos son requeridos.</small>
+        </div>
+      </div>
+
+      <!-- Campo Teléfono -->
+      <div class="form-field">
+        <ion-label class="input-label">Teléfono</ion-label>
+        <ion-input formControlName="telefono" type="tel"></ion-input>
+        <div *ngIf="registerForm.get('telefono')?.invalid && (registerForm.get('telefono')?.touched || registerForm.get('telefono')?.dirty)">
+          <small *ngIf="registerForm.get('telefono')?.errors?.['required']">El teléfono es requerido.</small>
+          <small *ngIf="registerForm.get('telefono')?.errors?.['pattern']">El formato del teléfono no es válido.</small>
+        </div>
+      </div>
+
+      <!-- Campo Fecha de Nacimiento -->
+      <div class="form-field">
+        <ion-label class="input-label">Fecha de Nacimiento</ion-label>
+        <ion-input formControlName="fechaNacimiento" type="date"></ion-input>
+        <div *ngIf="registerForm.get('fechaNacimiento')?.invalid && (registerForm.get('fechaNacimiento')?.touched || registerForm.get('fechaNacimiento')?.dirty)">
+          <small *ngIf="registerForm.get('fechaNacimiento')?.errors?.['required']">La fecha de nacimiento es requerida.</small>
+        </div>
+      </div>
+
+      <!-- Campo DNI -->
+      <div class="form-field">
+        <ion-label class="input-label">DNI</ion-label>
+        <ion-input formControlName="dni" type="text"></ion-input>
+        <div *ngIf="registerForm.get('dni')?.invalid && (registerForm.get('dni')?.touched || registerForm.get('dni')?.dirty)">
+          <small *ngIf="registerForm.get('dni')?.errors?.['required']">El DNI es requerido.</small>
+          <small *ngIf="registerForm.get('dni')?.errors?.['pattern']">El formato del DNI no es válido.</small>
+        </div>
+      </div>
+
       <!-- Botón de Registro -->
       <button type="submit" class="submit-button">
         Registrarse
