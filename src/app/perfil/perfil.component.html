@@ -32,9 +32,9 @@
   </thead>
   <tbody>
   <tr *ngFor="let evento of eventosApuntados">
-    <td>{{ evento }}</td>
+    <td>{{ evento.titulo }}</td>
     <td>
-      <button class="desapuntarse-button" (click)="desapuntarse(evento)">Desapuntarse</button>
+      <button class="desapuntarse-button" (click)="desapuntarse(evento.id)">Desapuntarse</button>
     </td>
   </tr>
   </tbody>

@@ -2,15 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {Mensaje} from '../modelos/mensaje';
-
-export interface Evento {
-  id: number;
-  titulo: string;
-  descripcion: string;
-  ubicacion: string;
-  aptitudes: string[];
-  imagen: string;
-}
+import {Evento} from '../modelos/evento';
 
 @Injectable({
   providedIn: 'root'
@@ -37,6 +29,6 @@ export class EventoService {
   }
 
   listarEventosPorUsuario(idUsuario: string): Observable<Evento[]> {
-    return this.http.get<Evento[]>(`${this.apiURL}/listaPorUsuario/${idUsuario}`); // Listar eventos por usuario
+    return this.http.get<Evento[]>(`${this.apiURL}/usuario/${idUsuario}`); // Listar eventos por usuario
   }
 }

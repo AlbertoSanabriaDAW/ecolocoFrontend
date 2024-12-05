@@ -5,6 +5,9 @@ import {RouterModule} from '@angular/router';
 import {PerfilService} from '../services/perfilService';
 import {NgForOf} from '@angular/common';
 import {EventoService} from '../services/evento.service';
+import {Evento} from '../modelos/evento';
+import {parse} from 'postcss';
+import {Mensaje} from '../modelos/mensaje';
 
 @Component({
   selector: 'app-perfil',
@@ -20,7 +23,8 @@ export class PerfilComponent implements OnInit {
   dni: string = '';
   fechaNacimiento: Date = new Date();
   aptitudes: string[] = [];
-  eventosApuntados: string[] = []; // Ejemplo inicial
+  eventosApuntados: Evento[] = []; // Ejemplo inicial
+  mensaje: Mensaje = new Mensaje("");
 
   constructor(private perfilService: PerfilService, private eventoService: EventoService) {
   }
@@ -38,16 +42,22 @@ export class PerfilComponent implements OnInit {
       this.fechaNacimiento = perfil.fechaNacimiento;
       this.aptitudes = ['manejo de herramientas', 'trabajo en equipo', 'gestión de proyectos'];
     });
-
+    this.eventoService.listarEventosPorUsuario('1').subscribe((eventos) => {
+      this.eventosApuntados = eventos;
+    });
   }
 
-  desapuntarse(evento: string): void {
-    this.eventosApuntados = this.eventosApuntados.filter(e => e !== evento);
-    console.log(`Desapuntado del evento: ${evento}`);
+  desapuntarse(evento: number): void {
+   this.eventoService.desapuntarse('1', evento.toString()).subscribe(() => {
+      this.eventosApuntados = this.eventosApuntados.filter(e => e.id !== evento);
+      this.mensaje.mensaje = `Desapuntado del evento: ${evento}`;
+      console.log(`Desapuntado del evento: ${evento}`);
+    });
   }
 
 }
- // ESTATICO: ---------------------------------------------------------
+
+// ESTATICO: ---------------------------------------------------------
 // import { Component, OnInit } from '@angular/core';
 // import { RouterModule } from '@angular/router';
 // import { PerfilService } from '../services/perfilService';
