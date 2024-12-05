@@ -1,3 +1,8 @@
+interface EventoInfo {
+  evento: number;
+  apuntado: string;
+}
+
 import {Component, OnInit} from '@angular/core';
 import {
   IonButton,
@@ -10,10 +15,11 @@ import {
   IonImg,
   IonRow
 } from '@ionic/angular/standalone';
-import {NgForOf} from '@angular/common';
+import {NgForOf, Location} from '@angular/common';
 import {EventoService} from '../services/evento.service';
 import {Observable} from 'rxjs';
 import {Mensaje} from '../modelos/mensaje';
+import {Evento} from '../modelos/evento';
 
 @Component({
   selector: 'app-eventos',
@@ -36,14 +42,24 @@ import {Mensaje} from '../modelos/mensaje';
   styleUrls: ['./eventos.component.scss']
 })
 export class EventosComponent implements OnInit {
-  eventos: any[] = [];
+  eventos: Evento[] = [];
+  is_active: number[] = [];
+  eventos2: { [key: number]: EventoInfo } = {};
 
-  constructor(private eventoService: EventoService) {
-  }
+  constructor(private eventoService: EventoService) {}
 
   ngOnInit(): void {
-    this.eventoService.obtenerEventos().subscribe((eventos: any[]) => {
+    this.eventoService.obtenerEventos().subscribe((eventos: Evento[]) => {
       this.eventos = eventos;
+      this.eventoService.listarEventosPorUsuario('1').subscribe((eventosUsuario: Evento[]) => {
+        this.is_active = eventosUsuario.map((evento: Evento) => evento.id);
+        this.eventos.forEach(evento => {
+          this.eventos2[evento.id] = {
+            evento: evento.id,
+            apuntado: this.apuntado(evento)
+          };
+        });
+      });
     });
   }
 
@@ -53,13 +69,24 @@ export class EventosComponent implements OnInit {
     }
     this.eventoService.darseDeAlta('1', evento.id).subscribe(
       (response: Mensaje) => {
+        location.reload();
         alert(`Mensaje: ${response.mensaje}`);
         // Aquí puedes mostrar un mensaje de éxito al usuario
       },
       (error: Mensaje) => {
+        location.reload();
         alert(`Mensaje: ${error.mensaje}`);
         // Aquí puedes mostrar un mensaje de error al usuario
       }
     );
   }
+
+  apuntado(evento: Evento) {
+    if (this.is_active.includes(evento.id)) {
+      return 'Apuntado';
+    } else {
+      return 'Apuntarse';
+    }
+  }
+
 }
