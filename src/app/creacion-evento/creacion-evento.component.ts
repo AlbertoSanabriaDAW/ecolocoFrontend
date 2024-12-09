@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {EventoService} from "../services/evento.service";
+import {LoginService} from '../services/login.service';
 
 @Component({
   selector: 'app-creacion-evento',
@@ -11,7 +12,8 @@ import {EventoService} from "../services/evento.service";
   ],
   standalone: true
 })
-export class CreacionEventoComponent {
+export class CreacionEventoComponent implements OnInit {
+  isAuthenticated: boolean = false;
 
   eventoForm: FormGroup = new FormGroup({
     titulo: new FormControl('', Validators.required),
@@ -22,8 +24,14 @@ export class CreacionEventoComponent {
     aptitudes: new FormControl('')
   });
 
-  constructor(private eventoService: EventoService) {}
 
+  constructor(private eventoService: EventoService, private loginService: LoginService) {}
+
+  ngOnInit() {
+    this.loginService.getAuthStatus().subscribe(status => {
+      this.isAuthenticated = status;
+    });
+  }
   onSubmit() {
     if (this.eventoForm && this.eventoForm.valid) {
         this.eventoService.guardarEventos(this.eventoForm.value).subscribe();

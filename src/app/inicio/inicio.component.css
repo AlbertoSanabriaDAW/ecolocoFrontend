@@ -50,7 +50,8 @@
 }
 
 .register-button,
-.login-button {
+.login-button,
+.logout-button {
   all: unset; /* Elimina todos los estilos predeterminados */
   display: inline-block;
   text-align: center;
@@ -66,13 +67,15 @@
 }
 
 .register-button:hover,
-.login-button:hover {
+.login-button:hover,
+.logout-button:hover {
   background-color: #388e3c; /* Oscurece el color al pasar el mouse */
   transform: scale(1.05);
 }
 
 .register-button:active,
-.login-button:active {
+.login-button:active,
+.logout-button:active {
   transform: scale(0.95);
 }
 

@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router, RouterModule} from '@angular/router';
 import {IonButton} from '@ionic/angular/standalone';
 import {NgIf} from '@angular/common';
+import {LoginService} from '../services/login.service';
 
 @Component({
   selector: 'app-inicio',
@@ -10,9 +11,21 @@ import {NgIf} from '@angular/common';
   standalone: true,
   imports: [RouterModule, IonButton, NgIf],
 })
-export class InicioComponent {
+export class InicioComponent implements OnInit {
   token: string = localStorage.getItem('authenticationtoken') || '';
-  constructor(private router: Router) {}
+  isAuthenticated: boolean = false;
+
+  constructor(private router: Router, private loginService: LoginService) {}
+
+  ngOnInit() {
+    this.loginService.getAuthStatus().subscribe(status => {
+      this.isAuthenticated = status;
+    });
+
+    //Inicializa el estado de autenticación
+    this.isAuthenticated = this.loginService.isAuthenticated();
+  }
+
 
   onRegisterClick(): void {
     // location.href = '/registro';
@@ -25,9 +38,6 @@ export class InicioComponent {
   }
 
   onLogoutClick() {
-    // location.href = '/logout';
-    localStorage.removeItem('authenticationtoken');
-    this.token = '';
-    this.router.navigate(['/']);
+    this.loginService.logout();
   }
 }

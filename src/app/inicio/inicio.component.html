@@ -5,15 +5,19 @@
 <div class="content">
   <h1>¡Únete a nuestra causa! 🌿</h1>
   <p>Buscamos voluntarios apasionados para cuidar nuestro planeta. 🌍</p>
+  <p>{{token}}</p>
 
   <!-- Imagen entre el texto y los botones -->
   <img src="../../assets/images/planetaInicio.png" alt="Planeta ecológico" class="center-image">
-
-  <div class="button-container">
-    <button *ngIf="!token" class="register-button" (click)="onRegisterClick()">Regístrate</button>
-    <button *ngIf="!token" class="login-button" (click)="onLoginClick()">Iniciar Sesión</button>
-
-    <button *ngIf="token" class="logout-button" (click)="onLogoutClick()">Cerrar sesión</button>
+<!--  Botones de Registro e inicio sesion-->
+  <div *ngIf="!isAuthenticated" class="button-container">
+    <button class="register-button" (click)="onRegisterClick()">Regístrate</button>
+    <button class="login-button" (click)="onLoginClick()">Iniciar Sesión</button>
   </div>
-  <p>{{token}}</p>
+
+<!--  Boton de cerrar sesion-->
+  <div *ngIf="isAuthenticated" class="button-container">
+    <button class="logout-button" (click)="onLogoutClick()">Cerrar Sesión</button>
+  </div>
+
 </div>
