@@ -42,6 +42,11 @@ export class LoginService {
     return this.authStatusSubject.asObservable(); // Obtener el estado de autenticación como un observable
   }
 
+  //Metodo para obtener el UsuarioId
+  getUsuarioId(): string | null {
+    return localStorage.getItem('usuarioId'); // Obtener el Id del usuario desde el almacenamiento local
+  }
+
   getToken(): string | null {
     return localStorage.getItem('authToken'); // Obtener el token desde el almacenamiento local
   }
