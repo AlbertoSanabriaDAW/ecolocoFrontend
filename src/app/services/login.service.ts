@@ -19,10 +19,12 @@ export class LoginService {
     return this.http.post(`${this.apiURL}/login`, credenciales).pipe(
       tap((response: any) => {
         console.log('Token de autenticación:', response.token); // Mostrar el token de autenticación en la consola
+        console.log('Id del usuario:', response.usuarioId); // Mostrar el Id del usuario en la consola
         localStorage.setItem('authToken', response.token); // Guardar el token de autenticación
+        localStorage.setItem('usuarioId', response.usuarioId); // Guardar el Id del usuario
         this.authStatusSubject.next(true); // Actualizar el estado de autenticación
       })
-    ); // Iniciar sesión
+    );
   }
 
   //Metodo de logout

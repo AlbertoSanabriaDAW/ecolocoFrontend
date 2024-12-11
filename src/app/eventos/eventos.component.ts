@@ -1,3 +1,5 @@
+import {LoginService} from '../services/login.service';
+
 interface EventoInfo {
   evento: number;
   apuntado: string;
@@ -45,8 +47,11 @@ export class EventosComponent implements OnInit {
   eventos: Evento[] = [];
   is_active: number[] = [];
   eventos2: { [key: number]: EventoInfo } = {};
+  userId: string | null;
 
-  constructor(private eventoService: EventoService) {}
+  constructor(private eventoService: EventoService, private loginService: LoginService) {
+    this.userId = loginService.getUsuarioId();
+  }
 
   ngOnInit(): void {
     this.eventoService.obtenerEventos().subscribe((eventos: Evento[]) => {

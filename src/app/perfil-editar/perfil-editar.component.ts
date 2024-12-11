@@ -2,6 +2,7 @@ import { PerfilService } from '../services/perfilService';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import {LoginService} from '../services/login.service';
 
 @Component({
   selector: 'app-perfil-editar',
@@ -21,7 +22,7 @@ export class PerfilEditarComponent implements OnInit {
   aptitudes: string[] = [];
   id: string = '';
 
-  constructor(private perfilService: PerfilService, private route: ActivatedRoute) { }
+  constructor(private perfilService: PerfilService, private route: ActivatedRoute, private loginService: LoginService) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id') || '';
